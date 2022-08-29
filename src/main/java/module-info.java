@@ -1,0 +1,20 @@
+module de.vsy.chat.shared_transmission{
+    requires de.vsy.chat.shared_utility;
+    requires com.fasterxml.jackson.databind;
+    exports de.vsy.chat.shared_transmission.dto.standard_empty_value;
+    exports de.vsy.chat.shared_transmission.packet.content;
+    exports de.vsy.chat.shared_transmission.packet.content.chat;
+    exports de.vsy.chat.shared_transmission.dto;
+    exports de.vsy.chat.shared_transmission.packet.content.relation;
+    exports de.vsy.chat.shared_transmission.dto.authentication;
+    exports de.vsy.chat.shared_transmission.packet;
+    exports de.vsy.chat.shared_transmission.packet.content.error;
+    exports de.vsy.chat.shared_transmission.packet.property.packet_identifier;
+    exports de.vsy.chat.shared_transmission.packet.content.authentication;
+    exports de.vsy.chat.shared_transmission.packet.property.packet_type;
+    exports de.vsy.chat.shared_transmission.packet.content.status;
+    exports de.vsy.chat.shared_transmission.packet.property.communicator;
+    exports de.vsy.chat.shared_transmission.packet.property;
+    exports de.vsy.chat.shared_transmission.packet.property.packet_category;
+    exports de.vsy.chat.shared_transmission.dto.builder;
+}
