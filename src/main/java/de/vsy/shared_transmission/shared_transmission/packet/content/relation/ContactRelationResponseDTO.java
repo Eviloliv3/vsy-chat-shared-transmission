@@ -53,10 +53,10 @@ class ContactRelationResponseDTO implements PacketContent, Translatable {
             final CommunicatorDTO respondingClient,
             @JsonProperty("decision") final boolean decision) {
         if (requestData == null) {
-            throw new NullPointerException("Keine Anfrage angegeben.");
+            throw new IllegalArgumentException("Keine Anfrage angegeben.");
         }
         if (respondingClient == null) {
-            throw new NullPointerException("Keine Kontaktdaten angegeben.");
+            throw new IllegalArgumentException("Keine Kontaktdaten angegeben.");
         }
         return new ContactRelationResponseDTO(requestData, respondingClient,
                                               decision);

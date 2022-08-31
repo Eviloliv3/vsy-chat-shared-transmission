@@ -39,10 +39,10 @@ class PersonalData implements Serializable {
     PersonalData valueOf (@JsonProperty("forename") final String forename,
                           @JsonProperty("surname") final String surname) {
         if (forename == null) {
-            throw new NullPointerException("Kein Vorname angegeben.");
+            throw new IllegalArgumentException("Kein Vorname angegeben.");
         }
         if (surname == null) {
-            throw new NullPointerException("Kein Nachname angegeben.");
+            throw new IllegalArgumentException("Kein Nachname angegeben.");
         }
         return new PersonalData(forename, surname);
     }

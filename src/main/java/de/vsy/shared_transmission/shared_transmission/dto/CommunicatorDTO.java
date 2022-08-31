@@ -42,7 +42,7 @@ class CommunicatorDTO implements Comparable<CommunicatorDTO>, Serializable {
             @JsonProperty("communicatorId") final int communicatorId,
             @JsonProperty("displayLabel") final String displayLabel) {
         if (displayLabel == null) {
-            throw new NullPointerException("Kein Displaylabel angegeben.");
+            throw new IllegalArgumentException("Kein Displaylabel angegeben.");
         }
         return new CommunicatorDTO(communicatorId, displayLabel);
     }

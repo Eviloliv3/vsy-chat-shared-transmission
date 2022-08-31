@@ -20,7 +20,7 @@ class AccountCreationDTOBuilder {
     public
     AccountCreationDTOBuilder withAuthenticationData (AuthenticationDTO authData) {
         if (authData == null) {
-            throw new NullPointerException(
+            throw new IllegalArgumentException(
                     "Keine Authentifizierungsdaten angegeben.");
         }
         this.authenticationData = authData;
@@ -30,7 +30,7 @@ class AccountCreationDTOBuilder {
     public
     AccountCreationDTOBuilder withPersonalData (PersonalData personalData) {
         if (personalData == null) {
-            throw new NullPointerException("Keine Personaldaten angegeben.");
+            throw new IllegalArgumentException("Keine Personaldaten angegeben.");
         }
         this.personalData = personalData;
         return this;

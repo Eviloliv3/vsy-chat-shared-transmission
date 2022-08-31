@@ -18,7 +18,7 @@ class AuthenticationDTOBuilder {
     public
     AuthenticationDTOBuilder withLogin (String login) {
         if (login == null) {
-            throw new NullPointerException("Kein Login angegeben.");
+            throw new IllegalArgumentException("Kein Login angegeben.");
         }
         this.login = login;
         return this;
@@ -35,7 +35,7 @@ class AuthenticationDTOBuilder {
     public
     AuthenticationDTOBuilder withPassword (final String password) {
         if (password == null) {
-            throw new NullPointerException("Kein Passwort angegeben.");
+            throw new IllegalArgumentException("Kein Passwort angegeben.");
         }
         this.password = password;
         return this;

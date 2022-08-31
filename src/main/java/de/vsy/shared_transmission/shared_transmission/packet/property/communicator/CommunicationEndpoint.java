@@ -38,7 +38,7 @@ class CommunicationEndpoint implements Serializable {
                                    @JsonProperty("entity")
                                    final EligibleCommunicationEntity entityLabel) {
         if (entityLabel == null) {
-            throw new NullPointerException(
+            throw new IllegalArgumentException(
                     "Keine gültige Empfängerentität angegeben.");
         }
         return new CommunicationEndpoint(entityId, entityLabel);

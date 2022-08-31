@@ -24,7 +24,7 @@ class CommunicatorDTOBuilder {
     public
     CommunicatorDTOBuilder withDisplayLabel (String displayLabel) {
         if (displayLabel == null) {
-            throw new NullPointerException("Kein Displaylabel angegeben.");
+            throw new IllegalArgumentException("Kein Displaylabel angegeben.");
         }
         this.displayLabel = displayLabel;
         return this;

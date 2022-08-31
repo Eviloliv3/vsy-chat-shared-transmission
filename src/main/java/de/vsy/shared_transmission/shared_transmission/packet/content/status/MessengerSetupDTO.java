@@ -89,13 +89,13 @@ class MessengerSetupDTO implements PacketContent {
         final var sb = new StringBuilder();
         sb.append("\"messengerSetupDTO\": {").append("\"activeContactMap\": {");
 
-        if (this.activeContacts == null || this.activeContacts.isEmpty()) {
+        if (this.activeContacts.isEmpty()) {
             sb.append("none");
         } else {
             sb.append(this.stringifyMap(this.activeContacts));
         }
         sb.append("}, \"messageMap\": {");
-        if (this.oldMessage == null || this.oldMessage.isEmpty()) {
+        if (this.oldMessage.isEmpty()) {
             sb.append("none");
         } else {
             sb.append(this.stringifyMap(this.oldMessage));

@@ -18,7 +18,7 @@ class PersonalDataBuilder {
     public
     PersonalDataBuilder withForename (String forename) {
         if (forename == null) {
-            throw new NullPointerException("Kein Vorname angegeben.");
+            throw new IllegalArgumentException("Kein Vorname angegeben.");
         }
         this.forename = forename;
         return this;
@@ -27,7 +27,7 @@ class PersonalDataBuilder {
     public
     PersonalDataBuilder withSurname (String surname) {
         if (surname == null) {
-            throw new NullPointerException("Kein Nachname angegeben.");
+            throw new IllegalArgumentException("Kein Nachname angegeben.");
         }
         this.surname = surname;
         return this;

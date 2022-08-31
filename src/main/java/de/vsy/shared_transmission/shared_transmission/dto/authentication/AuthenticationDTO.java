@@ -28,10 +28,10 @@ class AuthenticationDTO implements Serializable {
     AuthenticationDTO valueOf (@JsonProperty("login") final String login,
                                @JsonProperty("password") final String password) {
         if (login == null) {
-            throw new NullPointerException("Kein Login angegeben.");
+            throw new IllegalArgumentException("Kein Login angegeben.");
         }
         if (password == null) {
-            throw new NullPointerException("Kein Passwort angegeben.");
+            throw new IllegalArgumentException("Kein Passwort angegeben.");
         }
         return new AuthenticationDTO(login, password);
     }
