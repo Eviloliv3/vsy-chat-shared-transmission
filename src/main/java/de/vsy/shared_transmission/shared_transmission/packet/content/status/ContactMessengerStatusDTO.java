@@ -20,7 +20,7 @@ import java.util.Objects;
 import static java.util.List.copyOf;
 
 /** The Class ContactOnlineStatusData. */
-@JsonTypeName("clientMessengerStatusDTO")
+@JsonTypeName("contactMessengerStatusDTO")
 public
 class ContactMessengerStatusDTO implements PacketContent {
 

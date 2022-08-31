@@ -1,5 +1,6 @@
 package de.vsy.shared_transmission.shared_transmission.packet;
 
+import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import de.vsy.shared_transmission.shared_transmission.packet.content.PacketContent;
 import de.vsy.shared_transmission.shared_transmission.packet.property.PacketProperties;

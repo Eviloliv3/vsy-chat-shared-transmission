@@ -13,7 +13,7 @@ import java.io.Serial;
 import java.time.Instant;
 import java.util.Objects;
 
-@JsonTypeName("basicPacketImpl")
+@JsonTypeName("standardPacketImpl")
 public
 class PacketImpl implements Packet {
 
@@ -25,12 +25,6 @@ class PacketImpl implements Packet {
     private final PacketProperties packetProperties;
     private final String requestPacketHash;
     private String packetHash;
-
-    public
-    PacketImpl (final PacketProperties packetProperties,
-                final PacketContent packetContent) {
-        this(packetProperties, packetContent, null);
-    }
 
     public
     PacketImpl (final PacketProperties packetProperties,

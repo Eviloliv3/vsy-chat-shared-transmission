@@ -5,6 +5,7 @@ package de.vsy.shared_transmission.shared_transmission.packet.property;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonTypeName;
 import de.vsy.shared_transmission.shared_transmission.packet.property.communicator.CommunicationEndpoint;
 import de.vsy.shared_transmission.shared_transmission.packet.property.packet_identifier.ContentIdentifier;
 
@@ -15,6 +16,7 @@ import java.io.Serial;
  * CommunicationEndpoint identifying the sender and a CommunicationEndpoint used to
  * identify the recipient.
  */
+@JsonTypeName("packetPropertiesImpl")
 public
 class PacketPropertiesImpl implements PacketProperties {
 
