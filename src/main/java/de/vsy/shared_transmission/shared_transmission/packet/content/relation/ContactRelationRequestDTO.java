@@ -74,7 +74,7 @@ class ContactRelationRequestDTO implements HumanInteractionRequest {
                this.desiredState == that.getDesiredState() &&
                this.originatorId == that.originatorId &&
                this.recipientId == that.recipientId &&
-               Objects.equals(this.requestingClient, that.getContactData());
+               Objects.equals(this.requestingClient, that.getRequestingClient());
     }
 
     /**
@@ -104,7 +104,7 @@ class ContactRelationRequestDTO implements HumanInteractionRequest {
      * @return the contact dataManagement
      */
     public
-    CommunicatorDTO getContactData () {
+    CommunicatorDTO getRequestingClient () {
         return this.requestingClient;
     }
 

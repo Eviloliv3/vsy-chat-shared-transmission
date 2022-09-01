@@ -19,7 +19,7 @@ class PacketImpl implements Packet {
     /** The Constant serialVersionUID. */
     @Serial
     private static final long serialVersionUID = 4663843739168496029L;
-    private final Instant creationTimestamp;
+    private final Instant packetCreationTimestamp;
     private final PacketContent packetContent;
     private final PacketProperties packetProperties;
     private final String requestPacketHash;
@@ -41,7 +41,7 @@ class PacketImpl implements Packet {
             @JsonProperty("packetContent") final PacketContent packetContent,
             @JsonProperty("packetHash") final String packetHash,
             @JsonProperty("requestPacketHash") final String requestPacketHash) {
-        this.creationTimestamp = packetCreationTimeStamp;
+        this.packetCreationTimestamp = packetCreationTimeStamp;
         this.packetProperties = packetProperties;
         this.packetContent = packetContent;
         this.requestPacketHash = requestPacketHash;
@@ -72,8 +72,8 @@ class PacketImpl implements Packet {
 
     @Override
     public final
-    Instant getPacketCreationTimeStamp () {
-        return this.creationTimestamp;
+    Instant getPacketCreationTimestamp () {
+        return this.packetCreationTimestamp;
     }
 
     @Override

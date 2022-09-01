@@ -1,5 +1,6 @@
 package de.vsy.shared_transmission.shared_transmission.packet.property;
 
+import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import de.vsy.shared_transmission.shared_transmission.packet.property.communicator.CommunicationEndpoint;
 import de.vsy.shared_transmission.shared_transmission.packet.property.packet_identifier.ContentIdentifier;
@@ -10,8 +11,8 @@ import java.io.Serializable;
  * Wird als Header des Paketes verwendet. Es sind mindestens der Sender, der
  * Empfänger, der Erstellungszeitpunkt und Informationen zum Paketinhalt anzugeben.
  */
-@JsonTypeInfo(use = JsonTypeInfo.Id.NAME,
-              property = "type")
+@JsonTypeInfo(use = JsonTypeInfo.Id.CLASS,
+              property = "@class")
 public
 interface PacketProperties extends Serializable {
 
@@ -20,21 +21,21 @@ interface PacketProperties extends Serializable {
      *
      * @return das Senderobjekt (CommunicationEndpoint)
      */
-    CommunicationEndpoint getSenderEntity ();
+    CommunicationEndpoint getSender ();
 
     /**
      * Gibt ein representatives Objekt für den Empfänger aus.
      *
      * @return das Empfängerobjekt (CommunicationEndpoint)
      */
-    CommunicationEndpoint getRecipientEntity ();
+    CommunicationEndpoint getRecipient ();
 
     /**
      * Gibt ein, den Paketinhalt, spezifizierendes Objekt aus.
      *
      * @return der Inhaltsidentifizierer (ContentIdentifier)
      */
-    ContentIdentifier getContentIdentifier ();
+    ContentIdentifier getPacketIdentificationProvider ();
 
     /*
      *  Die nachfolgenden Standardmethoden müssen implementiert werden, damit

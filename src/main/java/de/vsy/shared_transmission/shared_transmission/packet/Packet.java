@@ -1,23 +1,19 @@
 package de.vsy.shared_transmission.shared_transmission.packet;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
+import com.fasterxml.jackson.annotation.JsonTypeName;
 import de.vsy.shared_transmission.shared_transmission.packet.content.PacketContent;
 import de.vsy.shared_transmission.shared_transmission.packet.property.PacketProperties;
 
 import java.io.Serializable;
 import java.time.Instant;
 
-@JsonTypeInfo(use = JsonTypeInfo.Id.NAME,
-              property = "type")
+@JsonTypeInfo(use = JsonTypeInfo.Id.CLASS,
+              property = "@class")
 public
 interface Packet extends Serializable {
 
-    @JsonProperty("type")
-    default String getTypeName(){
-        return this.getClass().getTypeName();
-    }
     /**
      * Gibt Paketeigenschaften des Paketes aus.
      *
@@ -37,7 +33,7 @@ interface Packet extends Serializable {
      *
      * @return der Erstellungszeitpunkt (int)
      */
-    Instant getPacketCreationTimeStamp ();
+    Instant getPacketCreationTimestamp ();
 
     /**
      * Gibt den MD5-Hashwert des aktuellen Pakets aus.

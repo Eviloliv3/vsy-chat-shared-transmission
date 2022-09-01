@@ -26,12 +26,9 @@ class TextMessageDTO extends ChatPacketDTO<String> {
      * @param recipientId the recipient id
      * @param message the message
      */
-    @JsonCreator
     public
-    TextMessageDTO (@JsonProperty("originatorId") final int originatorId,
-                    @JsonProperty("contactType") final EligibleContactEntity contactType,
-                    @JsonProperty("recipientId") final int recipientId,
-                    @JsonProperty("messageContent") final String message) {
+    TextMessageDTO (final int originatorId, final EligibleContactEntity contactType,
+                    final int recipientId, final String message) {
         this(originatorId, contactType, recipientId, message, false);
     }
 

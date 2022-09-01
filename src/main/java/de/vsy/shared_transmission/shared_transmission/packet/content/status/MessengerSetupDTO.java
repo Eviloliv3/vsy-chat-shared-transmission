@@ -30,17 +30,17 @@ class MessengerSetupDTO implements PacketContent {
     /**
      * Instantiates a new messenger setup response dataManagement.
      *
-     * @param oldMessage the old messages
+     * @param oldMessages the old messages
      * @param activeContacts the active clients
      */
     @JsonCreator
     public
-    MessengerSetupDTO (@JsonProperty("oldMessage")
-                       final Map<Integer, List<TextMessageDTO>> oldMessage,
+    MessengerSetupDTO (@JsonProperty("oldMessages")
+                       final Map<Integer, List<TextMessageDTO>> oldMessages,
                        @JsonProperty("activeContacts")
                        final Map<EligibleContactEntity, Set<CommunicatorDTO>> activeContacts) {
-        this.oldMessage = copyOf(oldMessage);
-        this.activeContacts = copyOf(activeContacts);
+        this.oldMessage = oldMessages == null ? Collections.emptyMap() : copyOf(oldMessages);
+        this.activeContacts = activeContacts == null ? Collections.emptyMap() : copyOf(activeContacts);
     }
 
     /**

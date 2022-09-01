@@ -35,11 +35,9 @@ class ContactRelationResponseDTO implements PacketContent, Translatable {
      * @param decision the decision
      */
     private
-    ContactRelationResponseDTO (
-            @JsonProperty("requestData") final ContactRelationRequestDTO requestData,
-            @JsonProperty("contactCommunicatorData")
-            final CommunicatorDTO respondingClient,
-            @JsonProperty("decision") final boolean decision) {
+    ContactRelationResponseDTO (final ContactRelationRequestDTO requestData,
+                                final CommunicatorDTO respondingClient,
+                                final boolean decision) {
         this.requestData = requestData;
         this.respondingClient = respondingClient;
         this.decision = decision;
@@ -49,7 +47,7 @@ class ContactRelationResponseDTO implements PacketContent, Translatable {
     public static
     ContactRelationResponseDTO valueOf (
             @JsonProperty("requestData") final ContactRelationRequestDTO requestData,
-            @JsonProperty("contactCommunicatorData")
+            @JsonProperty("respondingClient")
             final CommunicatorDTO respondingClient,
             @JsonProperty("decision") final boolean decision) {
         if (requestData == null) {
@@ -79,20 +77,11 @@ class ContactRelationResponseDTO implements PacketContent, Translatable {
         if (!(otherObject instanceof ContactRelationResponseDTO that)) {
             return false;
         }
-        return this.requestData.getDesiredState() == that.getDesiredState() &&
+        final var requestData = that.getRequestData();
+        return this.requestData.getDesiredState() == requestData.getDesiredState() &&
                this.decision == that.getDecision() &&
-               this.requestData.getContactType() == that.getContactType() &&
-               Objects.equals(this.respondingClient, that.getContactData());
-    }
-
-    /**
-     * Gets the desired state.
-     *
-     * @return the desired state
-     */
-    public
-    boolean getDesiredState () {
-        return this.requestData.getDesiredState();
+               this.requestData.getContactType() == requestData.getContactType() &&
+               Objects.equals(this.respondingClient, that.getRespondingClient());
     }
 
     /**
@@ -106,23 +95,17 @@ class ContactRelationResponseDTO implements PacketContent, Translatable {
     }
 
     /**
-     * Gets the contact type.
-     *
-     * @return the contact type
-     */
-    public
-    EligibleContactEntity getContactType () {
-        return this.requestData.getContactType();
-    }
-
-    /**
      * Gets the contact dataManagement.
      *
      * @return the contact dataManagement
      */
     public
-    CommunicatorDTO getContactData () {
+    CommunicatorDTO getRespondingClient () {
         return this.respondingClient;
+    }
+
+    public ContactRelationRequestDTO getRequestData(){
+        return this.requestData;
     }
 
     @Override
@@ -142,25 +125,5 @@ class ContactRelationResponseDTO implements PacketContent, Translatable {
           .append(respondingClientDataString)
           .append("}}}");
         return sb.toString();
-    }
-
-    /**
-     * Gets the originator id
-     *
-     * @return the originator id
-     */
-    public
-    int getOriginatorId () {
-        return this.requestData.getOriginatorId();
-    }
-
-    /**
-     * Gets the recipient id
-     *
-     * @return the recipient id
-     */
-    public
-    int getRecipientId () {
-        return this.requestData.getRecipientId();
     }
 }

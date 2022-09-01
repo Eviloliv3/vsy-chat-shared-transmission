@@ -16,7 +16,6 @@ import java.io.Serial;
  * CommunicationEndpoint identifying the sender and a CommunicationEndpoint used to
  * identify the recipient.
  */
-@JsonTypeName("packetPropertiesImpl")
 public
 class PacketPropertiesImpl implements PacketProperties {
 
@@ -57,9 +56,9 @@ class PacketPropertiesImpl implements PacketProperties {
     boolean hasIdenticalContent (final PacketProperties otherProperties) {
 
         if (otherProperties != null) {
-            return this.identifier.equals(otherProperties.getContentIdentifier()) &&
-                   this.sender.equals(otherProperties.getSenderEntity()) &&
-                   this.recipient.equals(otherProperties.getRecipientEntity());
+            return this.identifier.equals(otherProperties.getPacketIdentificationProvider()) &&
+                   this.sender.equals(otherProperties.getSender()) &&
+                   this.recipient.equals(otherProperties.getRecipient());
         }
         return false;
     }
@@ -71,7 +70,7 @@ class PacketPropertiesImpl implements PacketProperties {
      */
     @Override
     public
-    CommunicationEndpoint getSenderEntity () {
+    CommunicationEndpoint getSender () {
         return this.sender;
     }
 
@@ -82,7 +81,7 @@ class PacketPropertiesImpl implements PacketProperties {
      */
     @Override
     public
-    CommunicationEndpoint getRecipientEntity () {
+    CommunicationEndpoint getRecipient () {
         return this.recipient;
     }
 
@@ -93,7 +92,7 @@ class PacketPropertiesImpl implements PacketProperties {
      */
     @Override
     public
-    ContentIdentifier getContentIdentifier () {
+    ContentIdentifier getPacketIdentificationProvider () {
         return this.identifier;
     }
 

@@ -55,12 +55,12 @@ class ErrorDTO implements PacketContent, Translatable {
         if (!(otherObject instanceof ErrorDTO that)) {
             return false;
         }
-        return Objects.equals(this.errorMessage, that.getMessage()) &&
-               Objects.equals(this.originPacket, that.getOrigin());
+        return Objects.equals(this.errorMessage, that.getErrorMessage()) &&
+               Objects.equals(this.originPacket, that.getOriginPacket());
     }
 
     public
-    String getMessage () {
+    String getErrorMessage () {
         return this.errorMessage;
     }
 
@@ -70,7 +70,7 @@ class ErrorDTO implements PacketContent, Translatable {
      * @return the origin
      */
     public
-    Packet getOrigin () {
+    Packet getOriginPacket () {
         return this.originPacket;
     }
 

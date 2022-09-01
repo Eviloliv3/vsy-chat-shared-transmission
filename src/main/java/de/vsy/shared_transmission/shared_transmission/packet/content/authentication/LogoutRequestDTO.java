@@ -29,7 +29,7 @@ class LogoutRequestDTO implements PacketContent {
     @JsonCreator
     public
     LogoutRequestDTO (
-            @JsonProperty("primaryData") final CommunicatorDTO clientData) {
+            @JsonProperty("clientData") final CommunicatorDTO clientData) {
         this.clientCommunicatorData = clientData;
     }
 
