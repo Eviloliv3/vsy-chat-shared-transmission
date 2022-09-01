@@ -13,7 +13,6 @@ import java.io.Serial;
 import java.time.Instant;
 import java.util.Objects;
 
-@JsonTypeName("standardPacketImpl")
 public
 class PacketImpl implements Packet {
 

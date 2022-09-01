@@ -1,5 +1,6 @@
 package de.vsy.shared_transmission.shared_transmission.packet;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import de.vsy.shared_transmission.shared_transmission.packet.content.PacketContent;
@@ -13,6 +14,10 @@ import java.time.Instant;
 public
 interface Packet extends Serializable {
 
+    @JsonProperty("type")
+    default String getTypeName(){
+        return this.getClass().getTypeName();
+    }
     /**
      * Gibt Paketeigenschaften des Paketes aus.
      *
