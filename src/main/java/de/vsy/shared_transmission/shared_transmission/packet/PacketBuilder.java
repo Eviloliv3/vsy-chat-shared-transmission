@@ -14,7 +14,9 @@ class PacketBuilder {
 
     public
     Packet build () {
-        return new PacketImpl(this.properties, this.content, this.requestPacketHash);
+        Packet completePacket = new PacketImpl(this.properties, this.content, this.requestPacketHash);
+        completePacket.calculatePacketHash();
+        return completePacket;
     }
 
     public

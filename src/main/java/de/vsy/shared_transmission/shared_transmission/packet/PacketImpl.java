@@ -79,11 +79,14 @@ class PacketImpl implements Packet {
     @Override
     public final
     String getPacketHash () {
-
-        if (this.packetHash == null) {
-            this.packetHash = PacketHashCalculator.hash(this);
-        }
         return this.packetHash;
+    }
+
+    @Override
+    public final
+    void calculatePacketHash(){
+        if(this.packetHash == null)
+            this.packetHash = PacketHashCalculator.hash(this);
     }
 
     @Override
@@ -130,16 +133,17 @@ class PacketImpl implements Packet {
                                 null) ? this.packetProperties.toString() : null;
         final var content = (this.packetContent !=
                              null) ? this.packetContent.toString() : null;
-        final var hash = this.getPacketHash();
 
         sb.append("{ \"packetProperties\": ")
           .append(properties)
           .append(", \"packetContent\": ")
           .append(content)
-          .append(", \"Hash\": ")
-          .append(hash)
-          .append(", \"RequestHash\": ")
+          .append(", \"hash\": ")
+          .append(this.packetHash)
+          .append(", \"requestHash\": ")
           .append(this.requestPacketHash)
+          .append(", \"creationStamp\": ")
+          .append(this.packetCreationTimestamp)
           .append(" }");
         return sb.toString();
     }

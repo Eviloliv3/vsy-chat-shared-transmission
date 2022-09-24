@@ -43,6 +43,13 @@ interface Packet extends Serializable {
     String getPacketHash ();
 
     /**
+     * Berechnet den MD5-Hashwert des aktuellen Pakets. Sollte jeweils nach der
+     * Erstellung des Pakets ausgefuehrt werden. Damit Pakete logisch verfolgt werden
+     * koennen.
+     */
+    void calculatePacketHash();
+
+    /**
      * Gibt den MD5-Hashwert des Anfragepakets aus.
      *
      * @return der Hashwert (String)
