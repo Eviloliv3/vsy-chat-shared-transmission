@@ -2,22 +2,24 @@ package de.vsy.shared_transmission.shared_transmission.packet.property.packet_ca
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/** The Enum PacketCategory. */
-public
-enum PacketCategory {
-    @JsonProperty("AUTHENTICATION") AUTHENTICATION(true),
-    @JsonProperty("CHAT") CHAT(false),
-    @JsonProperty("ERROR") ERROR(false),
-    @JsonProperty("RELATION") RELATION(false),
-    @JsonProperty("STATUS") STATUS(true);
-    private final boolean localOnly;
+/**
+ * The Enum PacketCategory.
+ */
+public enum PacketCategory {
+  @JsonProperty("AUTHENTICATION")
+  AUTHENTICATION(true), @JsonProperty("CHAT")
+  CHAT(false), @JsonProperty("ERROR")
+  ERROR(false), @JsonProperty("RELATION")
+  RELATION(false), @JsonProperty("STATUS")
+  STATUS(true);
 
-    PacketCategory (final boolean localOnly) {
-        this.localOnly = localOnly;
-    }
+  private final boolean localOnly;
 
-    public
-    boolean islocalUseOnly () {
-        return this.localOnly;
-    }
+  PacketCategory(final boolean localOnly) {
+    this.localOnly = localOnly;
+  }
+
+  public boolean islocalUseOnly() {
+    return this.localOnly;
+  }
 }

@@ -5,7 +5,6 @@ package de.vsy.shared_transmission.shared_transmission.packet.content.status;
  *
  * @author Frederic Heath
  */
-public
-enum ClientService {
-    MESSENGER
+public enum ClientService {
+  MESSENGER
 }

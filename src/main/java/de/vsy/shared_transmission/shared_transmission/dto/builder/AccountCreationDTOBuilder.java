@@ -6,33 +6,28 @@ import de.vsy.shared_transmission.shared_transmission.dto.authentication.Authent
 import de.vsy.shared_transmission.shared_transmission.dto.authentication.PersonalData;
 
 @JsonPOJOBuilder
-public
-class AccountCreationDTOBuilder {
+public class AccountCreationDTOBuilder {
 
-    private AuthenticationDTO authenticationData;
-    private PersonalData personalData;
+  private AuthenticationDTO authenticationData;
+  private PersonalData personalData;
 
-    public
-    AccountCreationDTO build () {
-        return new AccountCreationDTO(authenticationData, personalData);
+  public AccountCreationDTO build() {
+    return new AccountCreationDTO(authenticationData, personalData);
+  }
+
+  public AccountCreationDTOBuilder withAuthenticationData(AuthenticationDTO authData) {
+    if (authData == null) {
+      throw new IllegalArgumentException("Keine Authentifizierungsdaten angegeben.");
     }
+    this.authenticationData = authData;
+    return this;
+  }
 
-    public
-    AccountCreationDTOBuilder withAuthenticationData (AuthenticationDTO authData) {
-        if (authData == null) {
-            throw new IllegalArgumentException(
-                    "Keine Authentifizierungsdaten angegeben.");
-        }
-        this.authenticationData = authData;
-        return this;
+  public AccountCreationDTOBuilder withPersonalData(PersonalData personalData) {
+    if (personalData == null) {
+      throw new IllegalArgumentException("Keine Personaldaten angegeben.");
     }
-
-    public
-    AccountCreationDTOBuilder withPersonalData (PersonalData personalData) {
-        if (personalData == null) {
-            throw new IllegalArgumentException("Keine Personaldaten angegeben.");
-        }
-        this.personalData = personalData;
-        return this;
-    }
+    this.personalData = personalData;
+    return this;
+  }
 }

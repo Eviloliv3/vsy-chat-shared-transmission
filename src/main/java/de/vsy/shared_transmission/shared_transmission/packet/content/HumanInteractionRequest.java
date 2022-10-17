@@ -2,14 +2,13 @@ package de.vsy.shared_transmission.shared_transmission.packet.content;
 
 import de.vsy.shared_transmission.shared_transmission.dto.CommunicatorDTO;
 
-public
-interface HumanInteractionRequest extends PacketContent, Translatable {
+public interface HumanInteractionRequest extends PacketContent, Translatable {
 
-    boolean getDesiredState ();
+  boolean getDesiredState();
 
-    int getOriginatorId ();
+  int getOriginatorId();
 
-    int getRecipientId ();
+  int getRecipientId();
 
-    PacketContent setDecision (CommunicatorDTO respondingClient, boolean decision);
+  PacketContent setDecision(CommunicatorDTO respondingClient, boolean decision);
 }

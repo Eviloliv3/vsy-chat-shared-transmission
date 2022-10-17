@@ -6,9 +6,11 @@ package de.vsy.shared_transmission.shared_transmission.packet.property.packet_ty
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
-/** The Class StatusType. */
+/**
+ * The Class StatusType.
+ */
 @JsonTypeName("statusEnum")
-public
-enum StatusType implements PacketType {
-    @JsonProperty("CHAT_STATUS") CHAT_STATUS
+public enum StatusType implements PacketType {
+  @JsonProperty("CHAT_STATUS")
+  CHAT_STATUS
 }
