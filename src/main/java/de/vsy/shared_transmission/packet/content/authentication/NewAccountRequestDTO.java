@@ -6,8 +6,8 @@ package de.vsy.shared_transmission.packet.content.authentication;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonTypeName;
-import de.vsy.shared_transmission.packet.content.PacketContent;
 import de.vsy.shared_transmission.dto.authentication.AccountCreationDTO;
+import de.vsy.shared_transmission.packet.content.PacketContent;
 import java.io.Serial;
 import java.util.Objects;
 
