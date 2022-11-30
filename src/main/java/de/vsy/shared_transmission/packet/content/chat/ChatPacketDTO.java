@@ -33,7 +33,8 @@ public abstract class ChatPacketDTO<T extends Serializable> implements PacketCon
   private final EligibleContactEntity contactType;
   private final int recipientId;
   private final T message;
-  private int originatorId;
+  private final boolean receptionState;
+  private final int originatorId;
 
   /**
    * Instantiates a new chat PacketDataManagement.
@@ -45,11 +46,12 @@ public abstract class ChatPacketDTO<T extends Serializable> implements PacketCon
   @JsonCreator
   protected ChatPacketDTO(@JsonProperty("originatorId") final int originatorId,
       @JsonProperty("contactType") final EligibleContactEntity contactType,
-      @JsonProperty("recipientId") final int recipientId,
+      @JsonProperty("recipientId") final int recipientId, @JsonProperty("receptionState") final boolean receptionState,
       @JsonProperty("message") final T message) {
     this.originatorId = originatorId;
     this.contactType = contactType;
     this.recipientId = recipientId;
+    this.receptionState = receptionState;
     this.message = message;
   }
 
@@ -60,15 +62,6 @@ public abstract class ChatPacketDTO<T extends Serializable> implements PacketCon
    */
   public int getOriginatorId() {
     return this.originatorId;
-  }
-
-  /**
-   * Lists the originator id.
-   *
-   * @param originatorId the new originator id
-   */
-  public void setOriginatorId(final int originatorId) {
-    this.originatorId = originatorId;
   }
 
   public EligibleContactEntity getContactType() {
@@ -84,9 +77,19 @@ public abstract class ChatPacketDTO<T extends Serializable> implements PacketCon
     return this.recipientId;
   }
 
+  /**
+   * Gets the reception state
+   *
+   * @return the reception state
+   */
+  public boolean getReceptionState() {
+    return this.receptionState;
+  }
+
   @Override
   public int hashCode() {
     var hash = 53 * Objects.hashCode(this.message);
+    hash = 53 * hash * Boolean.hashCode(this.receptionState);
     return 53 * hash + Integer.hashCode(this.originatorId);
   }
 

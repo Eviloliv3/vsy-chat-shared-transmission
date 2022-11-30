@@ -17,7 +17,6 @@ public class TextMessageDTO extends ChatPacketDTO<String> {
 
   @Serial
   private static final long serialVersionUID = -9063292172152458147L;
-  private final boolean receptionState;
 
   /**
    * Instantiates a new message dataManagement.
@@ -29,7 +28,7 @@ public class TextMessageDTO extends ChatPacketDTO<String> {
   public TextMessageDTO(final int originatorId, final EligibleContactEntity contactType,
       final int recipientId,
       final String message) {
-    this(originatorId, contactType, recipientId, message, false);
+    this(originatorId, contactType, recipientId, false, message);
   }
 
   /**
@@ -44,40 +43,13 @@ public class TextMessageDTO extends ChatPacketDTO<String> {
   public TextMessageDTO(@JsonProperty("originatorId") final int originatorId,
       @JsonProperty("contactType") final EligibleContactEntity contactType,
       @JsonProperty("recipientId") final int recipientId,
-      @JsonProperty("messageContent") final String message,
-      @JsonProperty("receptionState") final boolean receptionState) {
-    super(originatorId, contactType, recipientId, message);
-    this.receptionState = receptionState;
-  }
-
-  /**
-   * Gets the reception state
-   *
-   * @return the reception state
-   */
-  public boolean getReceptionState() {
-    return this.receptionState;
-  }
-
-  public TextMessageDTO setReceptionState() {
-    return new TextMessageDTO(super.getOriginatorId(), super.getContactType(),
-        super.getRecipientId(),
-        super.getMessage(), true);
-  }
-
-  @Override
-  public int hashCode() {
-    return 53 * super.hashCode() * Boolean.hashCode(this.receptionState);
-  }
-
-  @Override
-  public boolean equals(Object otherObject) {
-    return super.equals(otherObject);
+      @JsonProperty("receptionState") final boolean receptionState,
+      @JsonProperty("messageContent") final String message) {
+    super(originatorId, contactType, recipientId, receptionState, message);
   }
 
   @Override
   public String toString() {
-    return "\"textMessageData\": { " + super.toString() + ", \"receptionState\": \""
-        + this.receptionState + "\" }";
+    return "\"textMessageData\": { " + super.toString() + " }";
   }
 }
