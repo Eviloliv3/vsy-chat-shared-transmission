@@ -19,8 +19,7 @@ import java.util.Objects;
 
 /**
  * The Class ChatPacketData.
- *
- * @param <T>
+@param <T>
  */
 @JsonTypeInfo(use = NAME, property = "type")
 @JsonSubTypes({@Type(value = TextMessageDTO.class, name = "message")})
@@ -56,7 +55,7 @@ public abstract class ChatPacketDTO<T extends Serializable> implements PacketCon
   }
 
   /**
-   * Gets the originator id.
+   * Returns the originator id.
    *
    * @return the originator id
    */
@@ -69,7 +68,7 @@ public abstract class ChatPacketDTO<T extends Serializable> implements PacketCon
   }
 
   /**
-   * Gets the recipient id.
+   * Returns the recipient id.
    *
    * @return the recipient id
    */
@@ -78,7 +77,7 @@ public abstract class ChatPacketDTO<T extends Serializable> implements PacketCon
   }
 
   /**
-   * Gets the reception state
+   * Returns the reception state
    *
    * @return the reception state
    */

@@ -77,7 +77,7 @@ public class ContactRelationResponseDTO implements PacketContent, Translatable {
   }
 
   /**
-   * Gets the decision.
+   * Returns the decision.
    *
    * @return the decision
    */
@@ -86,7 +86,7 @@ public class ContactRelationResponseDTO implements PacketContent, Translatable {
   }
 
   /**
-   * Gets the contact dataManagement.
+   * Returns the contact dataManagement.
    *
    * @return the contact dataManagement
    */

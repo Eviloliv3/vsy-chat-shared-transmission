@@ -40,7 +40,7 @@ public class CommunicationEndpoint implements Serializable {
   }
 
   /**
-   * Gets the client entity.
+   * Returns the client entity.
    *
    * @param clientId the client id
    * @return the client entity
@@ -50,7 +50,7 @@ public class CommunicationEndpoint implements Serializable {
   }
 
   /**
-   * Gets the server entity.
+   * Returns the server entity.
    *
    * @param serverId the server id
    * @return the server entity
@@ -60,7 +60,7 @@ public class CommunicationEndpoint implements Serializable {
   }
 
   /**
-   * Gets the entity id.
+   * Returns the entity id.
    *
    * @return the entity id
    */
@@ -69,7 +69,7 @@ public class CommunicationEndpoint implements Serializable {
   }
 
   /**
-   * Gets the entity.
+   * Returns the entity.
    *
    * @return the entity
    */

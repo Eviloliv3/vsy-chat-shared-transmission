@@ -47,7 +47,7 @@ public class MessengerSetupDTO implements PacketContent {
   }
 
   /**
-   * Gets the active contacts.
+   * Returns the active contacts.
    *
    * @return the active contacts
    */
@@ -56,7 +56,7 @@ public class MessengerSetupDTO implements PacketContent {
   }
 
   /**
-   * Gets the old messages.
+   * Returns the old messages.
    *
    * @return the old messages
    */

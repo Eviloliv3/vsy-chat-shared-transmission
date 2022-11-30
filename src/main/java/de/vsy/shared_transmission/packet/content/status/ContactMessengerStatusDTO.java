@@ -100,7 +100,7 @@ public class ContactMessengerStatusDTO implements PacketContent {
   }
 
   /**
-   * Gets the message history.
+   * Returns the message history.
    *
    * @return the message history
    */
@@ -142,7 +142,7 @@ public class ContactMessengerStatusDTO implements PacketContent {
   }
 
   /**
-   * Gets the contact type
+   * Returns the contact type
    *
    * @return the contact type
    */

@@ -10,7 +10,7 @@ import de.vsy.shared_transmission.packet.content.relation.EligibleContactEntity;
 import java.io.Serial;
 
 /**
- * The Class MessageData. Frederic Heath
+ * The Class MessageData. 
  */
 @JsonTypeName("textMessage")
 public class TextMessageDTO extends ChatPacketDTO<String> {

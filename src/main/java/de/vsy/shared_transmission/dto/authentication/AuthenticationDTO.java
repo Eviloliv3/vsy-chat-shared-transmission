@@ -46,11 +46,11 @@ public class AuthenticationDTO implements Serializable {
     if (!(otherObject instanceof AuthenticationDTO that)) {
       return false;
     }
-    return Objects.equals(this.login, that.getLogin()) && Objects.equals(this.password,
+    return Objects.equals(this.login, that.getUsername()) && Objects.equals(this.password,
         that.getPassword());
   }
 
-  public String getLogin() {
+  public String getUsername() {
     return this.login;
   }
 

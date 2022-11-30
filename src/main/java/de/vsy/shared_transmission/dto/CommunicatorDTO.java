@@ -49,7 +49,7 @@ public class CommunicatorDTO implements Comparable<CommunicatorDTO>, Serializabl
   }
 
   /**
-   * Gets the entity label.
+   * Returns the entity label.
    *
    * @return the entity label
    */
@@ -76,7 +76,7 @@ public class CommunicatorDTO implements Comparable<CommunicatorDTO>, Serializabl
   }
 
   /**
-   * Gets the entity id.
+   * Returns the entity id.
    *
    * @return the entity id
    */

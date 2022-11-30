@@ -72,7 +72,7 @@ public class ContactRelationRequestDTO implements PacketContent, HumanInteractio
   }
 
   /**
-   * Gets the contact type.
+   * Returns the contact type.
    *
    * @return the contact type
    */
@@ -81,7 +81,7 @@ public class ContactRelationRequestDTO implements PacketContent, HumanInteractio
   }
 
   /**
-   * Gets the desired state.
+   * Returns the desired state.
    *
    * @return the desired state
    */
@@ -91,7 +91,7 @@ public class ContactRelationRequestDTO implements PacketContent, HumanInteractio
   }
 
   /**
-   * Gets the contact dataManagement.
+   * Returns the contact dataManagement.
    *
    * @return the contact dataManagement
    */
@@ -100,7 +100,7 @@ public class ContactRelationRequestDTO implements PacketContent, HumanInteractio
   }
 
   /**
-   * Gets the originator id
+   * Returns the originator id
    *
    * @return the originator id
    */
@@ -110,7 +110,7 @@ public class ContactRelationRequestDTO implements PacketContent, HumanInteractio
   }
 
   /**
-   * Gets the recipient id
+   * Returns the recipient id
    *
    * @return the recipient id
    */

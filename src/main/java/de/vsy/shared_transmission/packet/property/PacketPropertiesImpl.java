@@ -58,7 +58,7 @@ public class PacketPropertiesImpl implements PacketProperties {
   }
 
   /**
-   * Gets the sender.
+   * Returns the sender.
    *
    * @return the sender
    */
@@ -68,7 +68,7 @@ public class PacketPropertiesImpl implements PacketProperties {
   }
 
   /**
-   * Gets the recipient.
+   * Returns the recipient.
    *
    * @return the recipient
    */
@@ -78,7 +78,7 @@ public class PacketPropertiesImpl implements PacketProperties {
   }
 
   /**
-   * Gets the PacketIdentifier.
+   * Returns the PacketIdentifier.
    *
    * @return the PacketIdentifier
    */

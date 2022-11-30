@@ -48,7 +48,7 @@ public class MessengerTearDownDTO implements PacketContent {
   }
 
   /**
-   * Gets the new messenger state.
+   * Returns the new messenger state.
    *
    * @return the new messenger state
    */

@@ -61,7 +61,7 @@ public class ErrorDTO implements PacketContent, Translatable {
   }
 
   /**
-   * Gets the origin.
+   * Returns the origin.
    *
    * @return the origin
    */

@@ -26,7 +26,7 @@ public class LoginRequestDTO implements PacketContent {
   /**
    * Instantiates a new login request dataManagement.
    *
-   * @param login    the login name
+   * @param login    the username
    * @param password the password
    */
   public LoginRequestDTO(final String login, final String password) {

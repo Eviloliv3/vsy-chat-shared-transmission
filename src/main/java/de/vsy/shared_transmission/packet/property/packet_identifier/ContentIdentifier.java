@@ -15,14 +15,14 @@ import java.io.Serializable;
 public interface ContentIdentifier extends Serializable {
 
   /**
-   * Gets the PacketCategory.
+   * Returns the PacketCategory.
    *
    * @return the PacketCategory
    */
   PacketCategory getPacketCategory();
 
   /**
-   * Gets the PacketType.
+   * Returns the PacketType.
    *
    * @return the PacketType
    */

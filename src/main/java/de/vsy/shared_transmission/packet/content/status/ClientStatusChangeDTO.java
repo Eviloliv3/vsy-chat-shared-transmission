@@ -11,7 +11,7 @@ import java.util.Objects;
 /**
  * The Class ClientStatusDTO.
  *
- * @author Frederic Heath
+ *
  */
 @JsonTypeName("clientStatusChangeDTO")
 public class ClientStatusChangeDTO implements PacketContent {
@@ -58,7 +58,7 @@ public class ClientStatusChangeDTO implements PacketContent {
   }
 
   /**
-   * Gets the online status.
+   * Returns the online status.
    *
    * @return the online status
    */
@@ -67,7 +67,7 @@ public class ClientStatusChangeDTO implements PacketContent {
   }
 
   /**
-   * Gets the service choice.
+   * Returns the service choice.
    *
    * @return the service choice
    */
@@ -76,7 +76,7 @@ public class ClientStatusChangeDTO implements PacketContent {
   }
 
   /**
-   * Gets the contact dataManagement.
+   * Returns the contact dataManagement.
    *
    * @return the contact dataManagement
    */

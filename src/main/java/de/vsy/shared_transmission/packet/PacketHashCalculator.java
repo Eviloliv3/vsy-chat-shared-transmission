@@ -6,9 +6,7 @@ import static java.security.MessageDigest.getInstance;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
-/**
- * @author fredward
- */
+/***/
 public class PacketHashCalculator {
 
   private PacketHashCalculator() {

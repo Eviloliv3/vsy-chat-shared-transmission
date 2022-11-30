@@ -43,7 +43,7 @@ public class PacketImpl implements Packet {
   }
 
   /**
-   * Gets the PacketProperties.
+   * Returns the PacketProperties.
    *
    * @return the PacketProperties
    */
@@ -53,7 +53,7 @@ public class PacketImpl implements Packet {
   }
 
   /**
-   * Gets the PacketDataManagement.
+   * Returns the PacketDataManagement.
    *
    * @return the PacketDataManagement
    */
