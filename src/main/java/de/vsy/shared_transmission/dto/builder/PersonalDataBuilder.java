@@ -15,7 +15,7 @@ public class PersonalDataBuilder {
 
   public PersonalDataBuilder withForename(String forename) {
     if (forename == null) {
-      throw new IllegalArgumentException("Kein Vorname angegeben.");
+      throw new IllegalArgumentException("No first name specified.");
     }
     this.forename = forename;
     return this;
@@ -23,7 +23,7 @@ public class PersonalDataBuilder {
 
   public PersonalDataBuilder withSurname(String surname) {
     if (surname == null) {
-      throw new IllegalArgumentException("Kein Nachname angegeben.");
+      throw new IllegalArgumentException("No last name specified.");
     }
     this.surname = surname;
     return this;

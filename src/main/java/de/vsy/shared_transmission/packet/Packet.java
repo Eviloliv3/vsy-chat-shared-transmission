@@ -10,49 +10,48 @@ import java.time.Instant;
 public interface Packet extends Serializable {
 
   /**
-   * Gibt Paketeigenschaften des Paketes aus.
+   * Returns the Packet's properties.
    *
-   * @return Paketeigenschaften (PacketProperties)
+   * @return PacketProperties
    */
   PacketProperties getPacketProperties();
 
   /**
-   * Gibt den Paketinhalt aus.
+   * Returns the PacketContent.
    *
-   * @return Paketinhalt (PacketContent)
+   * @return PacketContent
    */
   PacketContent getPacketContent();
 
   /**
-   * Gibt den Erstellungszeitpunkt des Pakets aus.
+   * Returns the Instant the Packet was created.
    *
-   * @return der Erstellungszeitpunkt (int)
+   * @return Instant
    */
   Instant getPacketCreationTimestamp();
 
   /**
-   * Gibt den MD5-Hashwert des aktuellen Pakets aus.
+   * Returns the Packet's SHA-1 value.
    *
-   * @return der Hashwert (String)
+   * @return String
    */
   String getPacketHash();
 
   /**
-   * Berechnet den MD5-Hashwert des aktuellen Pakets. Sollte jeweils nach der Erstellung des Pakets
-   * ausgefuehrt werden. Damit Pakete logisch verfolgt werden koennen.
+   * Calculates the SHA-1 hash value for the current Packet. Should be called during or right after
+   * the Packet's creation, to keep the Packet consistently traceable.
    */
   void calculatePacketHash();
 
   /**
-   * Gibt den MD5-Hashwert des Anfragepakets aus.
+   * Returns the request Packet's hash value.
    *
-   * @return der Hashwert (String)
+   * @return String
    */
   String getRequestPacketHash();
 
   /*
-   * Die nachfolgenden Standardmethoden müssen implementiert werden, damit Pakete
-   * sinnvoll in Collections organisiert und notfalls geloggt werden können.
+   * The following methods have to be implemented, to be able to organize Packets in Collections.
    */
   @Override
   int hashCode();

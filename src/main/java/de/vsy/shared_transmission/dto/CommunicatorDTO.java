@@ -38,7 +38,7 @@ public class CommunicatorDTO implements Comparable<CommunicatorDTO>, Serializabl
   public static CommunicatorDTO valueOf(@JsonProperty("communicatorId") final int communicatorId,
       @JsonProperty("displayLabel") final String displayLabel) {
     if (displayLabel == null) {
-      throw new IllegalArgumentException("Kein Displaylabel angegeben.");
+      throw new IllegalArgumentException("No display label specified.");
     }
     return new CommunicatorDTO(communicatorId, displayLabel);
   }

@@ -15,20 +15,20 @@ public class AuthenticationDTOBuilder {
 
   public AuthenticationDTOBuilder withLogin(String login) {
     if (login == null) {
-      throw new IllegalArgumentException("Kein Login angegeben.");
+      throw new IllegalArgumentException("No username specified.");
     }
     this.login = login;
     return this;
   }
 
   /**
-   * @param password das einfach gehashte Passwort in Hexadezimaldarstellung (String)
-   * @return das Erbauer Objekt
-   * @throws NullPointerException wenn einer der Parameter nicht vorhanden ist
+   * @param password the hashed password in hex form (String)
+   * @return the authentication builder object
+   * @throws NullPointerException on missing parameter
    */
   public AuthenticationDTOBuilder withPassword(final String password) {
     if (password == null) {
-      throw new IllegalArgumentException("Kein Passwort angegeben.");
+      throw new IllegalArgumentException("No password specified.");
     }
     this.password = password;
     return this;

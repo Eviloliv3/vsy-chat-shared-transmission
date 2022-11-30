@@ -19,7 +19,7 @@ public enum PacketCategory {
     this.localOnly = localOnly;
   }
 
-  public boolean islocalUseOnly() {
+  public boolean isLocalUseOnly() {
     return this.localOnly;
   }
 }

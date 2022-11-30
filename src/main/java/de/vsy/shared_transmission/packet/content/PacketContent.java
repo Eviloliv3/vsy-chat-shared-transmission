@@ -7,8 +7,7 @@ import java.io.Serializable;
 public interface PacketContent extends Serializable {
 
   /*
-   * Die nachfolgenden Standardmethoden müssen implementiert werden, damit Pakete
-   * sinnvoll in Collections organisiert und notfalls geloggt werden können.
+   * The following methods have to be implemented, to be able to use PacketContent with Collections.
    */
   @Override
   int hashCode();

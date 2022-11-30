@@ -34,10 +34,10 @@ public class PersonalData implements Serializable {
   public static PersonalData valueOf(@JsonProperty("forename") final String forename,
       @JsonProperty("surname") final String surname) {
     if (forename == null) {
-      throw new IllegalArgumentException("Kein Vorname angegeben.");
+      throw new IllegalArgumentException("No first name specified..");
     }
     if (surname == null) {
-      throw new IllegalArgumentException("Kein Nachname angegeben.");
+      throw new IllegalArgumentException("No last name specified.");
     }
     return new PersonalData(forename, surname);
   }

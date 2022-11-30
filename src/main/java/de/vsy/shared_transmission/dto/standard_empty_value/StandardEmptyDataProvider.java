@@ -15,7 +15,7 @@ public class StandardEmptyDataProvider {
   public static final CommunicatorDTO EMPTY_COMMUNICATOR = CommunicatorDTO.valueOf(
       STANDARD_CLIENT_ID,
       STANDARD_EMPTY_STRING);
-  public static final PersonalData EMTPY_PERSONALDATA = PersonalData.valueOf(STANDARD_EMPTY_STRING,
+  public static final PersonalData EMPTY_PERSONAL_DATA = PersonalData.valueOf(STANDARD_EMPTY_STRING,
       STANDARD_EMPTY_STRING);
 
   protected StandardEmptyDataProvider() {

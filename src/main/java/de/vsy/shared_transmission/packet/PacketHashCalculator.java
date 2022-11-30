@@ -60,7 +60,7 @@ public class PacketHashCalculator {
     try {
       packetHasher = getInstance("SHA-1");
     } catch (NoSuchAlgorithmException nae) {
-      throw new IllegalStateException("SHA-1 Message Digest konnte " + "nicht erstellt werden.",
+      throw new IllegalStateException("SHA-1 MessageDigest could not be created.",
           nae);
     }
     return packetHasher;

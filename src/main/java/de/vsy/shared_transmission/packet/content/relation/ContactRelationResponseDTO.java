@@ -46,10 +46,10 @@ public class ContactRelationResponseDTO implements PacketContent, Translatable {
       @JsonProperty("respondingClient") final CommunicatorDTO respondingClient,
       @JsonProperty("decision") final boolean decision) {
     if (requestData == null) {
-      throw new IllegalArgumentException("Keine Anfrage angegeben.");
+      throw new IllegalArgumentException("No request specified.");
     }
     if (respondingClient == null) {
-      throw new IllegalArgumentException("Keine Kontaktdaten angegeben.");
+      throw new IllegalArgumentException("No contact communicator data specified.");
     }
     return new ContactRelationResponseDTO(requestData, respondingClient, decision);
   }

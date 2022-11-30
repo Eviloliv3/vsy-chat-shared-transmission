@@ -6,36 +6,32 @@ import de.vsy.shared_transmission.packet.property.packet_identifier.ContentIdent
 import java.io.Serializable;
 
 /**
- * Wird als Header des Paketes verwendet. Es sind mindestens der Sender, der Empfänger, der
- * Erstellungszeitpunkt und Informationen zum Paketinhalt anzugeben.
+ * Will be used as header of a Packet. Contains a sender entity, a recipient entity, the creation
+ * timestamp and packet content classification.
  */
 @JsonTypeInfo(use = JsonTypeInfo.Id.CLASS, property = "@class")
 public interface PacketProperties extends Serializable {
 
   /**
-   * Gibt ein representatives Objekt für den Sender aus.
-   *
-   * @return das Senderobjekt (CommunicationEndpoint)
+   * Returns the sender entity.
+   * @return CommunicationEndpoint
    */
   CommunicationEndpoint getSender();
 
   /**
-   * Gibt ein representatives Objekt für den Empfänger aus.
-   *
-   * @return das Empfängerobjekt (CommunicationEndpoint)
+   * Returns the recipient entity.
+   * @return CommunicationEndpoint
    */
   CommunicationEndpoint getRecipient();
 
   /**
-   * Gibt ein, den Paketinhalt, spezifizierendes Objekt aus.
-   *
-   * @return der Inhaltsidentifizierer (ContentIdentifier)
+   * Returns the Packet's content classification.
+   * @return ContentIdentifier
    */
   ContentIdentifier getPacketIdentificationProvider();
 
   /*
-   * Die nachfolgenden Standardmethoden müssen implementiert werden, damit Pakete
-   * sinnvoll in Collections organisiert und notfalls geloggt werden können.
+   * The following methods have to be implemented, to be able to organize Packets in Collections.
    */
   @Override
   int hashCode();

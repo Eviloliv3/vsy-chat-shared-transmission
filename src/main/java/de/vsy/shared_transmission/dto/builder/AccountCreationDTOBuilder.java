@@ -17,7 +17,7 @@ public class AccountCreationDTOBuilder {
 
   public AccountCreationDTOBuilder withAuthenticationData(AuthenticationDTO authData) {
     if (authData == null) {
-      throw new IllegalArgumentException("Keine Authentifizierungsdaten angegeben.");
+      throw new IllegalArgumentException("No credentials passed.");
     }
     this.authenticationData = authData;
     return this;
@@ -25,7 +25,7 @@ public class AccountCreationDTOBuilder {
 
   public AccountCreationDTOBuilder withPersonalData(PersonalData personalData) {
     if (personalData == null) {
-      throw new IllegalArgumentException("Keine Personaldaten angegeben.");
+      throw new IllegalArgumentException("No personal data passed.");
     }
     this.personalData = personalData;
     return this;
