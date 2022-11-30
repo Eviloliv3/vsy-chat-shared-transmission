@@ -49,6 +49,11 @@ public class TextMessageDTO extends ChatPacketDTO<String> {
   }
 
   @Override
+  public TextMessageDTO setReceptionState() {
+    return new TextMessageDTO(this.getOriginatorId(), this.getContactType(), this.getRecipientId(), true, this.getMessage());
+  }
+
+  @Override
   public String toString() {
     return "\"textMessageData\": { " + super.toString() + " }";
   }

@@ -86,6 +86,8 @@ public abstract class ChatPacketDTO<T extends Serializable> implements PacketCon
     return this.receptionState;
   }
 
+  public abstract ChatPacketDTO setReceptionState();
+
   @Override
   public int hashCode() {
     var hash = 53 * Objects.hashCode(this.message);
