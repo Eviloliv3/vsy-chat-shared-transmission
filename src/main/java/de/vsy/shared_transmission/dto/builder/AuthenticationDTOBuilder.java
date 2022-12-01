@@ -6,18 +6,18 @@ import de.vsy.shared_transmission.dto.authentication.AuthenticationDTO;
 @JsonPOJOBuilder
 public class AuthenticationDTOBuilder {
 
-  private String login;
+  private String username;
   private String password;
 
   public AuthenticationDTO build() {
-    return AuthenticationDTO.valueOf(this.login, this.password);
+    return AuthenticationDTO.valueOf(this.username, this.password);
   }
 
-  public AuthenticationDTOBuilder withLogin(String login) {
-    if (login == null) {
+  public AuthenticationDTOBuilder withUsername(String username) {
+    if (username == null) {
       throw new IllegalArgumentException("No username specified.");
     }
-    this.login = login;
+    this.username = username;
     return this;
   }
 
