@@ -15,48 +15,48 @@ public class PersonalData implements Serializable {
 
   @Serial
   private static final long serialVersionUID = -4605010330930942456L;
-  private final String forename;
-  private final String surname;
+  private final String firstName;
+  private final String lastName;
 
-  private PersonalData(final String forename, final String surname) {
-    this.forename = forename;
-    this.surname = surname;
+  private PersonalData(final String firstName, final String lastName) {
+    this.firstName = firstName;
+    this.lastName = lastName;
   }
 
   /**
-   * @param forename the forename
-   * @param surname  the surname
+   * @param firstName the firstName
+   * @param lastName  the lastName
    * @return the PersonalData created from given arguments
    */
   @JsonCreator
-  public static PersonalData valueOf(@JsonProperty("forename") final String forename,
-      @JsonProperty("surname") final String surname) {
-    if (forename == null) {
+  public static PersonalData valueOf(@JsonProperty("firstName") final String firstName,
+      @JsonProperty("lastName") final String lastName) {
+    if (firstName == null) {
       throw new IllegalArgumentException("No first name specified..");
     }
-    if (surname == null) {
+    if (lastName == null) {
       throw new IllegalArgumentException("No last name specified.");
     }
-    return new PersonalData(forename, surname);
+    return new PersonalData(firstName, lastName);
   }
 
   /**
-   * @return the forename
+   * @return the firstName
    */
   public String getForename() {
-    return this.forename;
+    return this.firstName;
   }
 
   /**
-   * @return the surname
+   * @return the lastName
    */
   public String getSurname() {
-    return this.surname;
+    return this.lastName;
   }
 
   @Override
   public int hashCode() {
-    return hash(this.forename, this.surname);
+    return hash(this.firstName, this.lastName);
   }
 
   @Override
@@ -68,14 +68,14 @@ public class PersonalData implements Serializable {
     if (!(otherObject instanceof PersonalData that)) {
       return false;
     }
-    return Objects.equals(this.forename, that.forename) && Objects.equals(this.surname,
-        that.surname);
+    return Objects.equals(this.firstName, that.firstName) && Objects.equals(this.lastName,
+        that.lastName);
   }
 
   @Override
   public String toString() {
-    return "\"personalData\": { \"forename\": \"" + this.forename + "\", " + "\"surname\": \""
-        + this.surname
+    return "\"personalData\": { \"firstName\": \"" + this.firstName + "\", " + "\"lastName\": \""
+        + this.lastName
         + "\" }";
   }
 }

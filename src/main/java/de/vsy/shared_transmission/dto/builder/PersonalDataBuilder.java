@@ -6,26 +6,26 @@ import de.vsy.shared_transmission.dto.authentication.AuthenticationDTO;
 @JsonPOJOBuilder
 public class PersonalDataBuilder {
 
-  private String forename;
-  private String surname;
+  private String firstName;
+  private String lastName;
 
   public AuthenticationDTO build() {
-    return AuthenticationDTO.valueOf(this.forename, this.surname);
+    return AuthenticationDTO.valueOf(this.firstName, this.lastName);
   }
 
-  public PersonalDataBuilder withForename(String forename) {
-    if (forename == null) {
+  public PersonalDataBuilder withForename(String firstName) {
+    if (firstName == null) {
       throw new IllegalArgumentException("No first name specified.");
     }
-    this.forename = forename;
+    this.firstName = firstName;
     return this;
   }
 
-  public PersonalDataBuilder withSurname(String surname) {
-    if (surname == null) {
+  public PersonalDataBuilder withSurname(String lastName) {
+    if (lastName == null) {
       throw new IllegalArgumentException("No last name specified.");
     }
-    this.surname = surname;
+    this.lastName = lastName;
     return this;
   }
 }
