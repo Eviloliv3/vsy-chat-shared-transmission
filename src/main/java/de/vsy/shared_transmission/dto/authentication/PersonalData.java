@@ -43,14 +43,14 @@ public class PersonalData implements Serializable {
   /**
    * @return the firstName
    */
-  public String getForename() {
+  public String getFirstName() {
     return this.firstName;
   }
 
   /**
    * @return the lastName
    */
-  public String getSurname() {
+  public String getLastName() {
     return this.lastName;
   }
 

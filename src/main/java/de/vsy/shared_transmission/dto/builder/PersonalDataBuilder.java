@@ -13,7 +13,7 @@ public class PersonalDataBuilder {
     return AuthenticationDTO.valueOf(this.firstName, this.lastName);
   }
 
-  public PersonalDataBuilder withForename(String firstName) {
+  public PersonalDataBuilder withFirstName(String firstName) {
     if (firstName == null) {
       throw new IllegalArgumentException("No first name specified.");
     }
@@ -21,7 +21,7 @@ public class PersonalDataBuilder {
     return this;
   }
 
-  public PersonalDataBuilder withSurname(String lastName) {
+  public PersonalDataBuilder withLastName(String lastName) {
     if (lastName == null) {
       throw new IllegalArgumentException("No last name specified.");
     }
