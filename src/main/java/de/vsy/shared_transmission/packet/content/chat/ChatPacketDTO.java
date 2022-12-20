@@ -111,7 +111,7 @@ public abstract class ChatPacketDTO<T extends Serializable> implements PacketCon
     var messageString = (this.message != null) ? this.message : "null";
     return "\"chatPacketDTO\": { \"message\": \"" + messageString + "\", " + "\"originatorId\": "
         + this.originatorId + ", \"contactType\": " + this.contactType + ", \"recipientId\": "
-        + this.recipientId + " }";
+        + this.recipientId + ", \"receptionState\":" + this.receptionState + " }";
   }
 
   public T getMessage() {
