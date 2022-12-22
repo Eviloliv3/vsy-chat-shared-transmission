@@ -7,9 +7,6 @@ import java.io.Serial;
 import java.io.Serializable;
 import java.util.Objects;
 
-/**
- * The Interface CommunicatorDTO.
- */
 @JsonTypeName("communicatorDTO")
 public class CommunicatorDTO implements Comparable<CommunicatorDTO>, Serializable {
 

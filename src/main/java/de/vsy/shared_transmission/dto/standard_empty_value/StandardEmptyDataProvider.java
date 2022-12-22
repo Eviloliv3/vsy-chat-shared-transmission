@@ -7,6 +7,9 @@ import de.vsy.shared_transmission.dto.CommunicatorDTO;
 import de.vsy.shared_transmission.dto.authentication.AuthenticationDTO;
 import de.vsy.shared_transmission.dto.authentication.PersonalData;
 
+/**
+ * Provides empty client oriented DTOs using standard empty values.
+ */
 public class StandardEmptyDataProvider {
 
   public static final AuthenticationDTO EMPTY_AUTHENTICATION = AuthenticationDTO.valueOf(

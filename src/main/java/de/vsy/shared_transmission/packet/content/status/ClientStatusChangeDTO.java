@@ -10,8 +10,6 @@ import java.util.Objects;
 
 /**
  * The Class ClientStatusDTO.
- *
- *
  */
 @JsonTypeName("clientStatusChangeDTO")
 public class ClientStatusChangeDTO implements PacketContent {

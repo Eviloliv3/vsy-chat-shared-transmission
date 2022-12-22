@@ -10,7 +10,7 @@ import de.vsy.shared_transmission.packet.content.relation.EligibleContactEntity;
 import java.io.Serial;
 
 /**
- * The Class MessageData. 
+ * The Class MessageData.
  */
 @JsonTypeName("textMessage")
 public class TextMessageDTO extends ChatPacketDTO<String> {
@@ -50,7 +50,8 @@ public class TextMessageDTO extends ChatPacketDTO<String> {
 
   @Override
   public TextMessageDTO setReceptionState() {
-    return new TextMessageDTO(this.getOriginatorId(), this.getContactType(), this.getRecipientId(), true, this.getMessage());
+    return new TextMessageDTO(this.getOriginatorId(), this.getContactType(), this.getRecipientId(),
+        true, this.getMessage());
   }
 
   @Override

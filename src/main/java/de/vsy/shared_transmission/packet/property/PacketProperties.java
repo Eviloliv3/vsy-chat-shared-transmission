@@ -14,18 +14,21 @@ public interface PacketProperties extends Serializable {
 
   /**
    * Returns the sender entity.
+   *
    * @return CommunicationEndpoint
    */
   CommunicationEndpoint getSender();
 
   /**
    * Returns the recipient entity.
+   *
    * @return CommunicationEndpoint
    */
   CommunicationEndpoint getRecipient();
 
   /**
    * Returns the Packet's content classification.
+   *
    * @return ContentIdentifier
    */
   ContentIdentifier getPacketIdentificationProvider();
