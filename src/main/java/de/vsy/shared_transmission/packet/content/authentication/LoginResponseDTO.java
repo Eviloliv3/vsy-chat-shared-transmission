@@ -51,6 +51,6 @@ public class LoginResponseDTO implements PacketContent {
     var clientDataString =
         (this.clientCommunicatorData != null) ? this.clientCommunicatorData.toString() : "null";
 
-    return "\"LoginResponseDTO\": { \"clientData\": " + clientDataString + "}";
+    return "\"loginResponseDTO\": { \"clientData\": " + clientDataString + "}";
   }
 }

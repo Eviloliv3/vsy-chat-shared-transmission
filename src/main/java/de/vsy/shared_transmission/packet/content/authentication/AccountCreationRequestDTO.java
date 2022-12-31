@@ -12,10 +12,10 @@ import java.io.Serial;
 import java.util.Objects;
 
 /**
- * The Class NewAccountRequestDTO.
+ * The Class AccountCreationRequestDTO.
  */
 @JsonTypeName("newAccountRequest")
-public class NewAccountRequestDTO implements PacketContent {
+public class AccountCreationRequestDTO implements PacketContent {
 
   @Serial
   private static final long serialVersionUID = -9178720704765426650L;
@@ -24,12 +24,12 @@ public class NewAccountRequestDTO implements PacketContent {
   /**
    * Instantiates a new new account request dataManagement.
    */
-  public NewAccountRequestDTO() {
+  public AccountCreationRequestDTO() {
     this(null);
   }
 
   @JsonCreator
-  public NewAccountRequestDTO(
+  public AccountCreationRequestDTO(
       @JsonProperty("accountCreationData") AccountCreationDTO accountCreationData) {
     this.accountCreationData = accountCreationData;
   }
@@ -44,7 +44,7 @@ public class NewAccountRequestDTO implements PacketContent {
     if (this == otherObject) {
       return true;
     }
-    if (!(otherObject instanceof NewAccountRequestDTO that)) {
+    if (!(otherObject instanceof AccountCreationRequestDTO that)) {
       return false;
     }
     return Objects.equals(this.accountCreationData, that.getAccountCreationData());

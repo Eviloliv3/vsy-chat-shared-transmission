@@ -50,6 +50,6 @@ public class LogoutResponseDTO implements PacketContent {
 
   @Override
   public String toString() {
-    return "\"LogoutResponseDTO\": { \"logoutState\": " + this.logoutState + "}";
+    return "\"logoutResponseDTO\": { \"logoutState\": " + this.logoutState + "}";
   }
 }

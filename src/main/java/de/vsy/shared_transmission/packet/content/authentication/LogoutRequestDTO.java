@@ -57,7 +57,7 @@ public class LogoutRequestDTO implements PacketContent {
         ? this.clientCommunicatorData.toString()
         : "null";
 
-    return "\"LogoutRequestDTO\": { \"clientCommunicatorData\": " + clientCommunicatorDataString
+    return "\"logoutRequestDTO\": { \"clientCommunicatorData\": " + clientCommunicatorDataString
         + "}";
   }
 }

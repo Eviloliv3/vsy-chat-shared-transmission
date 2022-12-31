@@ -63,6 +63,6 @@ public class LoginRequestDTO implements PacketContent {
     var authDataString =
         (this.authenticationData != null) ? this.authenticationData.toString() : "null";
 
-    return "\"LoginRequestDTO\": { \"authenticationData\": " + authDataString + "}";
+    return "\"loginRequestDTO\": { \"authenticationData\": " + authDataString + "}";
   }
 }
