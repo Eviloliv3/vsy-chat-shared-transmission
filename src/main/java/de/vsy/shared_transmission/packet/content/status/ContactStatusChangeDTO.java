@@ -21,8 +21,8 @@ import java.util.Objects;
 /**
  * The Class ContactOnlineStatusData.
  */
-@JsonTypeName("contactMessengerStatusDTO")
-public class ContactMessengerStatusDTO implements PacketContent {
+@JsonTypeName("contactStatusChangeDTO")
+public class ContactStatusChangeDTO implements PacketContent {
 
   @Serial
   private static final long serialVersionUID = 2848603712317947975L;
@@ -41,10 +41,10 @@ public class ContactMessengerStatusDTO implements PacketContent {
    * @param messageHistory the message history
    */
   @JsonCreator
-  public ContactMessengerStatusDTO(@JsonProperty("contactType") EligibleContactEntity contactType,
-      @JsonProperty("onlineStatus") final boolean onlineStatus,
-      @JsonProperty("contactData") final CommunicatorDTO contactData,
-      @JsonProperty("messages") final List<TextMessageDTO> messageHistory) {
+  public ContactStatusChangeDTO(@JsonProperty("contactType") EligibleContactEntity contactType,
+                                @JsonProperty("onlineStatus") final boolean onlineStatus,
+                                @JsonProperty("contactData") final CommunicatorDTO contactData,
+                                @JsonProperty("messages") final List<TextMessageDTO> messageHistory) {
     this.serviceType = ClientService.MESSENGER;
     this.onlineStatus = onlineStatus;
     this.contactType = contactType;
@@ -57,17 +57,17 @@ public class ContactMessengerStatusDTO implements PacketContent {
     }
   }
 
-  public static ContactMessengerStatusDTO createFromClientStatusDTO(
+  public static ContactStatusChangeDTO createFromClientStatusDTO(
       ClientStatusChangeDTO clientStatusData) {
-    return new ContactMessengerStatusDTO(EligibleContactEntity.CLIENT,
+    return new ContactStatusChangeDTO(EligibleContactEntity.CLIENT,
         clientStatusData.getOnlineStatus(),
         clientStatusData.getContactData(), null);
   }
 
-  public static ContactMessengerStatusDTO addMessageHistory(
-      ContactMessengerStatusDTO dataToComplete,
+  public static ContactStatusChangeDTO addMessageHistory(
+      ContactStatusChangeDTO dataToComplete,
       List<TextMessageDTO> messageHistory) {
-    return new ContactMessengerStatusDTO(EligibleContactEntity.CLIENT,
+    return new ContactStatusChangeDTO(EligibleContactEntity.CLIENT,
         dataToComplete.getOnlineStatus(),
         dataToComplete.getContactData(), messageHistory);
   }
@@ -93,7 +93,7 @@ public class ContactMessengerStatusDTO implements PacketContent {
       return true;
     }
 
-    if (!(otherObject instanceof ContactMessengerStatusDTO that) || !super.equals(otherObject)) {
+    if (!(otherObject instanceof ContactStatusChangeDTO that) || !super.equals(otherObject)) {
       return false;
     }
     return Objects.equals(this.messageHistory, that.getMessages());

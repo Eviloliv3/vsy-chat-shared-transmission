@@ -12,7 +12,7 @@ import java.io.Serial;
  */
 public class ErrorIdentifier extends ContentIdentifierImpl {
 
-  private static final PacketCategory CATEGORY = PacketCategory.ERROR;
+  private static final PacketCategory CATEGORY = PacketCategory.NOTIFICATION;
   @Serial
   private static final long serialVersionUID = 8298044570665042103L;
 

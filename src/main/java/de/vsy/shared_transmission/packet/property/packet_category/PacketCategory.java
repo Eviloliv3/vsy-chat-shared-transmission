@@ -8,8 +8,8 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 public enum PacketCategory {
   @JsonProperty("AUTHENTICATION")
   AUTHENTICATION(true), @JsonProperty("CHAT")
-  CHAT(false), @JsonProperty("ERROR")
-  ERROR(false), @JsonProperty("RELATION")
+  CHAT(false), @JsonProperty("NOTIFICATION")
+  NOTIFICATION(false), @JsonProperty("RELATION")
   RELATION(false), @JsonProperty("STATUS")
   STATUS(true);
 
