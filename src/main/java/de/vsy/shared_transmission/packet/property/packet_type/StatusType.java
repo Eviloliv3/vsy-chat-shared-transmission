@@ -11,6 +11,6 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
  */
 @JsonTypeName("statusEnum")
 public enum StatusType implements PacketType {
-  @JsonProperty("CHAT_STATUS")
-  CHAT_STATUS
+    @JsonProperty("CHAT_STATUS")
+    CHAT_STATUS
 }

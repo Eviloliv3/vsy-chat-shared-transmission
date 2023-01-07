@@ -4,11 +4,11 @@ import de.vsy.shared_transmission.dto.CommunicatorDTO;
 
 public interface HumanInteractionRequest extends Translatable {
 
-  boolean getDesiredState();
+    boolean getDesiredState();
 
-  int getOriginatorId();
+    int getOriginatorId();
 
-  int getRecipientId();
+    int getRecipientId();
 
-  PacketContent setDecision(CommunicatorDTO respondingClient, boolean decision);
+    PacketContent setDecision(CommunicatorDTO respondingClient, boolean decision);
 }

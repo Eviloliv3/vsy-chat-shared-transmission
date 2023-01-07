@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import de.vsy.shared_transmission.dto.CommunicatorDTO;
 import de.vsy.shared_transmission.packet.content.PacketContent;
+
 import java.io.Serial;
 import java.util.Objects;
 
@@ -14,96 +15,96 @@ import java.util.Objects;
 @JsonTypeName("clientStatusChangeDTO")
 public class ClientStatusChangeDTO implements PacketContent {
 
-  @Serial
-  private static final long serialVersionUID = 8006534314246383258L;
-  private final ClientService serviceType;
-  private final boolean onlineStatus;
-  private CommunicatorDTO contactData;
+    @Serial
+    private static final long serialVersionUID = 8006534314246383258L;
+    private final ClientService serviceType;
+    private final boolean onlineStatus;
+    private CommunicatorDTO contactData;
 
-  /**
-   * Instantiates a new client status de.vsy.shared_transmission.dto.
-   *
-   * @param serviceChoice the service choice
-   * @param contactData   the contact dataManagement
-   * @param onlineStatus  the online status
-   */
-  @JsonCreator
-  public ClientStatusChangeDTO(@JsonProperty("serviceChoice") final ClientService serviceChoice,
-      @JsonProperty("onlineStatus") final boolean onlineStatus,
-      @JsonProperty("contactData") final CommunicatorDTO contactData) {
-    this.serviceType = serviceChoice;
-    this.onlineStatus = onlineStatus;
-    this.contactData = contactData;
-  }
-
-  @Override
-  public int hashCode() {
-    var hash = 53 * Objects.hashCode(this.serviceType);
-    hash = 53 * hash * Boolean.hashCode(this.onlineStatus);
-    return 53 * hash * Objects.hashCode(this.contactData);
-  }
-
-  @Override
-  public boolean equals(Object otherObject) {
-    if (this == otherObject) {
-      return true;
+    /**
+     * Instantiates a new client status de.vsy.shared_transmission.dto.
+     *
+     * @param serviceChoice the service choice
+     * @param contactData   the contact dataManagement
+     * @param onlineStatus  the online status
+     */
+    @JsonCreator
+    public ClientStatusChangeDTO(@JsonProperty("serviceChoice") final ClientService serviceChoice,
+                                 @JsonProperty("onlineStatus") final boolean onlineStatus,
+                                 @JsonProperty("contactData") final CommunicatorDTO contactData) {
+        this.serviceType = serviceChoice;
+        this.onlineStatus = onlineStatus;
+        this.contactData = contactData;
     }
-    if (!(otherObject instanceof ClientStatusChangeDTO that)) {
-      return false;
+
+    @Override
+    public int hashCode() {
+        var hash = 53 * Objects.hashCode(this.serviceType);
+        hash = 53 * hash * Boolean.hashCode(this.onlineStatus);
+        return 53 * hash * Objects.hashCode(this.contactData);
     }
-    return this.onlineStatus == that.getOnlineStatus() && this.serviceType == that.getServiceType()
-        && Objects.equals(this.contactData, that.getContactData());
-  }
 
-  /**
-   * Returns the online status.
-   *
-   * @return the online status
-   */
-  public boolean getOnlineStatus() {
-    return this.onlineStatus;
-  }
+    @Override
+    public boolean equals(Object otherObject) {
+        if (this == otherObject) {
+            return true;
+        }
+        if (!(otherObject instanceof ClientStatusChangeDTO that)) {
+            return false;
+        }
+        return this.onlineStatus == that.getOnlineStatus() && this.serviceType == that.getServiceType()
+                && Objects.equals(this.contactData, that.getContactData());
+    }
 
-  /**
-   * Returns the service choice.
-   *
-   * @return the service choice
-   */
-  public ClientService getServiceType() {
-    return this.serviceType;
-  }
+    /**
+     * Returns the online status.
+     *
+     * @return the online status
+     */
+    public boolean getOnlineStatus() {
+        return this.onlineStatus;
+    }
 
-  /**
-   * Returns the contact dataManagement.
-   *
-   * @return the contact dataManagement
-   */
-  public CommunicatorDTO getContactData() {
-    return this.contactData;
-  }
+    /**
+     * Returns the service choice.
+     *
+     * @return the service choice
+     */
+    public ClientService getServiceType() {
+        return this.serviceType;
+    }
 
-  /**
-   * Sets the contact dataManagement.
-   *
-   * @param contactCommunicatorData the new contact dataManagement
-   */
-  public void setContactData(final CommunicatorDTO contactCommunicatorData) {
-    this.contactData = contactCommunicatorData;
-  }
+    /**
+     * Returns the contact dataManagement.
+     *
+     * @return the contact dataManagement
+     */
+    public CommunicatorDTO getContactData() {
+        return this.contactData;
+    }
 
-  @Override
-  public String toString() {
-    final var sb = new StringBuilder();
+    /**
+     * Sets the contact dataManagement.
+     *
+     * @param contactCommunicatorData the new contact dataManagement
+     */
+    public void setContactData(final CommunicatorDTO contactCommunicatorData) {
+        this.contactData = contactCommunicatorData;
+    }
 
-    final var contactCommunicatorDataString =
-        (this.contactData != null) ? this.contactData.toString() : null;
+    @Override
+    public String toString() {
+        final var sb = new StringBuilder();
 
-    sb.append("\"ClientStatusChangeDTO\": { ").append("\"serviceChoice:\": ")
-        .append(this.serviceType)
-        .append(", \"onlineState\": ").append(this.onlineStatus)
-        .append(", \"contactCommunicatorData\": {")
-        .append(contactCommunicatorDataString).append("}}");
+        final var contactCommunicatorDataString =
+                (this.contactData != null) ? this.contactData.toString() : null;
 
-    return sb.toString();
-  }
+        sb.append("\"ClientStatusChangeDTO\": { ").append("\"serviceChoice:\": ")
+                .append(this.serviceType)
+                .append(", \"onlineState\": ").append(this.onlineStatus)
+                .append(", \"contactCommunicatorData\": {")
+                .append(contactCommunicatorDataString).append("}}");
+
+        return sb.toString();
+    }
 }

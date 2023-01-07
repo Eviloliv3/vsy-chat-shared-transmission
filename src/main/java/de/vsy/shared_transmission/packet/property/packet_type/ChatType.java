@@ -11,8 +11,8 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
  */
 @JsonTypeName("chatEnum")
 public enum ChatType implements PacketType {
-  @JsonProperty("GROUP_MESSAGE")
-  GROUP_MESSAGE, @JsonProperty("GROUP_REGISTER")
-  GROUP_REGISTRATION, @JsonProperty("TEXT_MESSAGE")
-  TEXT_MESSAGE
+    @JsonProperty("GROUP_MESSAGE")
+    GROUP_MESSAGE, @JsonProperty("GROUP_REGISTER")
+    GROUP_REGISTRATION, @JsonProperty("TEXT_MESSAGE")
+    TEXT_MESSAGE
 }

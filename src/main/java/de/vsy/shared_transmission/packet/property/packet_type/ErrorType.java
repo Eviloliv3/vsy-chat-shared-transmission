@@ -11,6 +11,6 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
  */
 @JsonTypeName("errorEnum")
 public enum ErrorType implements PacketType {
-  @JsonProperty("SIMPLE_ERROR")
-  SIMPLE_ERROR
+    @JsonProperty("SIMPLE_ERROR")
+    SIMPLE_ERROR
 }
