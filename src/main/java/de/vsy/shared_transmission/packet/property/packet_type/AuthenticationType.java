@@ -13,8 +13,8 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 public enum AuthenticationType implements PacketType {
     @JsonProperty("CLIENT_LOGIN")
     CLIENT_LOGIN, @JsonProperty("CLIENT_LOGOUT")
-    CLIENT_LOGOUT, @JsonProperty("CLIENT_NEW_ACCOUNT_LOGIN")
-    CLIENT_NEW_ACCOUNT, @JsonProperty("CLIENT_RECONNECT")
+    CLIENT_LOGOUT, @JsonProperty("CLIENT_ACCOUNT_CREATION")
+    CLIENT_ACCOUNT_CREATION, @JsonProperty("CLIENT_RECONNECT")
     CLIENT_RECONNECT, @JsonProperty("CLIENT_ACCOUNT_DELETION")
     CLIENT_ACCOUNT_DELETION
 }
