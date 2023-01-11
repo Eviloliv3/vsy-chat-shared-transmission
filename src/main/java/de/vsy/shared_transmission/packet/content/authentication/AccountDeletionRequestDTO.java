@@ -24,7 +24,10 @@ public class AccountDeletionRequestDTO implements PacketContent {
 
     @Override
     public boolean equals(Object other) {
-        return this == other;
+        if (this == other) {
+            return true;
+        }
+        return false;
     }
 
     @Override
