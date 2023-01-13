@@ -58,31 +58,16 @@ public class PacketPropertiesImpl implements PacketProperties {
         return false;
     }
 
-    /**
-     * Returns the sender.
-     *
-     * @return the sender
-     */
     @Override
     public CommunicationEndpoint getSender() {
         return this.sender;
     }
 
-    /**
-     * Returns the recipient.
-     *
-     * @return the recipient
-     */
     @Override
     public CommunicationEndpoint getRecipient() {
         return this.recipient;
     }
 
-    /**
-     * Returns the PacketIdentifier.
-     *
-     * @return the PacketIdentifier
-     */
     @Override
     public ContentIdentifier getPacketIdentificationProvider() {
         return this.identifier;

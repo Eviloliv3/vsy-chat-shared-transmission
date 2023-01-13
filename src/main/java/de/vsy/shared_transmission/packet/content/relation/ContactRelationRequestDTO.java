@@ -81,11 +81,6 @@ public class ContactRelationRequestDTO implements PacketContent, HumanInteractio
         return this.contactType;
     }
 
-    /**
-     * Returns the desired state.
-     *
-     * @return the desired state
-     */
     @Override
     public boolean getDesiredState() {
         return this.desiredState;
@@ -100,21 +95,11 @@ public class ContactRelationRequestDTO implements PacketContent, HumanInteractio
         return this.requestingClient;
     }
 
-    /**
-     * Returns the originator id
-     *
-     * @return the originator id
-     */
     @Override
     public int getOriginatorId() {
         return this.originatorId;
     }
 
-    /**
-     * Returns the recipient id
-     *
-     * @return the recipient id
-     */
     @Override
     public int getRecipientId() {
         return this.recipientId;

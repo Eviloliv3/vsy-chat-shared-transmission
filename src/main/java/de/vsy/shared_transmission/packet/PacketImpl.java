@@ -43,21 +43,11 @@ public class PacketImpl implements Packet {
         this.packetHash = packetHash;
     }
 
-    /**
-     * Returns the PacketProperties.
-     *
-     * @return the PacketProperties
-     */
     @Override
     public PacketProperties getPacketProperties() {
         return this.packetProperties;
     }
 
-    /**
-     * Returns the PacketDataManagement.
-     *
-     * @return the PacketDataManagement
-     */
     @Override
     public PacketContent getPacketContent() {
         return this.packetContent;
@@ -93,12 +83,6 @@ public class PacketImpl implements Packet {
         return hash;
     }
 
-    /**
-     * Equals.
-     *
-     * @param otherPacket the other packet
-     * @return true, if successful
-     */
     @Override
     public boolean equals(final Object otherPacket) {
         if (this == otherPacket) {
