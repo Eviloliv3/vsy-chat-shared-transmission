@@ -1,6 +1,4 @@
-/*
- *
- */
+
 package de.vsy.shared_transmission.packet;
 
 import com.fasterxml.jackson.annotation.JsonCreator;

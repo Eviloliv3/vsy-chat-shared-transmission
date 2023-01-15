@@ -1,6 +1,4 @@
-/*
- *
- */
+
 package de.vsy.shared_transmission.packet.content.chat;
 
 import com.fasterxml.jackson.annotation.*;
