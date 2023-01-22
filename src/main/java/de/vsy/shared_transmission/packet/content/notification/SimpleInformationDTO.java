@@ -22,7 +22,8 @@ public class SimpleInformationDTO implements Translatable, PacketContent {
 
   @Override
   public String toString() {
-    return "\"simpleInformationDTO\": { \"informationString\": " + this.informationString + " }";
+    var messageString = (this.informationString != null) ? this.informationString : "null";
+    return "\"simpleInformationDTO\": { \"informationString\": " + messageString + " }";
   }
 
   @Override

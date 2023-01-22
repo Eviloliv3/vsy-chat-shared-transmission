@@ -15,11 +15,10 @@ import java.util.Objects;
  * The Class ErrorData.
  */
 @JsonTypeName("errorData")
-public class ErrorDTO implements PacketContent, Translatable {
+public class ErrorDTO extends SimpleInformationDTO {
 
   @Serial
   private static final long serialVersionUID = -2309802640212846310L;
-  private final String errorMessage;
   private final Packet originPacket;
 
   /**
@@ -31,13 +30,13 @@ public class ErrorDTO implements PacketContent, Translatable {
   @JsonCreator
   public ErrorDTO(@JsonProperty("errorMessage") final String errorMessage,
       @JsonProperty("originPacket") final Packet causingPacket) {
-    this.errorMessage = errorMessage;
+    super(errorMessage);
     this.originPacket = causingPacket;
   }
 
   @Override
   public int hashCode() {
-    var hash = 53 * Objects.hashCode(this.errorMessage);
+    var hash = super.hashCode();
     return 53 * hash * hash(this.originPacket);
   }
 
@@ -49,12 +48,7 @@ public class ErrorDTO implements PacketContent, Translatable {
     if (!(otherObject instanceof ErrorDTO that)) {
       return false;
     }
-    return Objects.equals(this.errorMessage, that.getErrorMessage())
-        && Objects.equals(this.originPacket, that.getOriginPacket());
-  }
-
-  public String getErrorMessage() {
-    return this.errorMessage;
+    return super.equals(otherObject) && Objects.equals(this.originPacket, that.getOriginPacket());
   }
 
   /**
@@ -68,10 +62,9 @@ public class ErrorDTO implements PacketContent, Translatable {
 
   @Override
   public String toString() {
-    var messageString = (this.errorMessage != null) ? this.errorMessage : "null";
     var originPacketString = (this.originPacket != null) ? this.originPacket.toString() : "null";
 
-    return "\"errorDTO\": { \"message\": " + messageString + "\"originPacket" + "\": "
+    return "\"errorDTO\": { " + super.toString() + ", \"originPacket" + "\": "
         + originPacketString + " }";
   }
 }
