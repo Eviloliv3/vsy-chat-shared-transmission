@@ -1,4 +1,3 @@
-
 package de.vsy.shared_transmission.packet.property.packet_type;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -9,6 +8,6 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
  */
 @JsonTypeName("errorEnum")
 public enum ErrorType implements PacketType {
-    @JsonProperty("SIMPLE_ERROR")
-    SIMPLE_ERROR
+  @JsonProperty("SIMPLE_ERROR")
+  SIMPLE_ERROR
 }

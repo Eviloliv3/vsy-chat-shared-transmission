@@ -1,10 +1,8 @@
-
 package de.vsy.shared_transmission.packet.property.packet_identifier;
 
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import de.vsy.shared_transmission.packet.property.packet_category.PacketCategory;
 import de.vsy.shared_transmission.packet.property.packet_type.PacketType;
-
 import java.io.Serializable;
 
 /**
@@ -13,17 +11,17 @@ import java.io.Serializable;
 @JsonDeserialize(as = ContentIdentifierImpl.class)
 public interface ContentIdentifier extends Serializable {
 
-    /**
-     * Returns the PacketCategory.
-     *
-     * @return the PacketCategory
-     */
-    PacketCategory getPacketCategory();
+  /**
+   * Returns the PacketCategory.
+   *
+   * @return the PacketCategory
+   */
+  PacketCategory getPacketCategory();
 
-    /**
-     * Returns the PacketType.
-     *
-     * @return the PacketType
-     */
-    PacketType getPacketType();
+  /**
+   * Returns the PacketType.
+   *
+   * @return the PacketType
+   */
+  PacketType getPacketType();
 }

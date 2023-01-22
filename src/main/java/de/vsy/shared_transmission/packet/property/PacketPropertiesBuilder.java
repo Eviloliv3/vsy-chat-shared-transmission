@@ -7,26 +7,26 @@ import de.vsy.shared_transmission.packet.property.packet_identifier.ContentIdent
 @JsonPOJOBuilder
 public class PacketPropertiesBuilder {
 
-    private ContentIdentifier identifier;
-    private CommunicationEndpoint sender;
-    private CommunicationEndpoint recipient;
+  private ContentIdentifier identifier;
+  private CommunicationEndpoint sender;
+  private CommunicationEndpoint recipient;
 
-    public PacketProperties build() {
-        return new PacketPropertiesImpl(sender, recipient, identifier);
-    }
+  public PacketProperties build() {
+    return new PacketPropertiesImpl(sender, recipient, identifier);
+  }
 
-    public PacketPropertiesBuilder withSender(CommunicationEndpoint sender) {
-        this.sender = sender;
-        return this;
-    }
+  public PacketPropertiesBuilder withSender(CommunicationEndpoint sender) {
+    this.sender = sender;
+    return this;
+  }
 
-    public PacketPropertiesBuilder withRecipient(CommunicationEndpoint recipient) {
-        this.recipient = recipient;
-        return this;
-    }
+  public PacketPropertiesBuilder withRecipient(CommunicationEndpoint recipient) {
+    this.recipient = recipient;
+    return this;
+  }
 
-    public PacketPropertiesBuilder withIdentifier(ContentIdentifier identifier) {
-        this.identifier = identifier;
-        return this;
-    }
+  public PacketPropertiesBuilder withIdentifier(ContentIdentifier identifier) {
+    this.identifier = identifier;
+    return this;
+  }
 }

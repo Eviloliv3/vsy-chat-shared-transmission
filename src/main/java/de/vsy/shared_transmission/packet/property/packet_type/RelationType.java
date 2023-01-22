@@ -8,6 +8,6 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
  */
 @JsonTypeName("relationEnum")
 public enum RelationType implements PacketType {
-    @JsonProperty("CONTACT_RELATION")
-    CONTACT_RELATION
+  @JsonProperty("CONTACT_RELATION")
+  CONTACT_RELATION
 }

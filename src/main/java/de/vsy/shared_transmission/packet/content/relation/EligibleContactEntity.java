@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  * The Enum EligibleContactEntity.
  */
 public enum EligibleContactEntity {
-    @JsonProperty("CLIENT")
-    CLIENT, @JsonProperty("GROUP")
-    GROUP
+  @JsonProperty("CLIENT")
+  CLIENT, @JsonProperty("GROUP")
+  GROUP
 }

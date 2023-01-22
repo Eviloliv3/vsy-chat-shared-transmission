@@ -1,11 +1,9 @@
-
 package de.vsy.shared_transmission.packet.property;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import de.vsy.shared_transmission.packet.property.communicator.CommunicationEndpoint;
 import de.vsy.shared_transmission.packet.property.packet_identifier.ContentIdentifier;
-
 import java.io.Serial;
 
 /**
@@ -15,71 +13,71 @@ import java.io.Serial;
  */
 public class PacketPropertiesImpl implements PacketProperties {
 
-    /**
-     * The Constant serialVersionUID.
-     */
-    @Serial
-    private static final long serialVersionUID = -4869253504191133523L;
-    private final ContentIdentifier identifier;
-    private final CommunicationEndpoint sender;
-    private final CommunicationEndpoint recipient;
+  /**
+   * The Constant serialVersionUID.
+   */
+  @Serial
+  private static final long serialVersionUID = -4869253504191133523L;
+  private final ContentIdentifier identifier;
+  private final CommunicationEndpoint sender;
+  private final CommunicationEndpoint recipient;
 
-    /**
-     * Instantiates a new PacketProperties.
-     *
-     * @param senderEntity    the sender entity
-     * @param recipientEntity the recipient entity
-     * @param identifier      the identifier
-     */
-    @JsonCreator
-    public PacketPropertiesImpl(@JsonProperty("sender") final CommunicationEndpoint senderEntity,
-                                @JsonProperty("recipient") final CommunicationEndpoint recipientEntity,
-                                @JsonProperty("packetIdentificationProvider") final ContentIdentifier identifier) {
-        this.sender = senderEntity;
-        this.recipient = recipientEntity;
-        this.identifier = identifier;
+  /**
+   * Instantiates a new PacketProperties.
+   *
+   * @param senderEntity    the sender entity
+   * @param recipientEntity the recipient entity
+   * @param identifier      the identifier
+   */
+  @JsonCreator
+  public PacketPropertiesImpl(@JsonProperty("sender") final CommunicationEndpoint senderEntity,
+      @JsonProperty("recipient") final CommunicationEndpoint recipientEntity,
+      @JsonProperty("packetIdentificationProvider") final ContentIdentifier identifier) {
+    this.sender = senderEntity;
+    this.recipient = recipientEntity;
+    this.identifier = identifier;
+  }
+
+  /**
+   * Checks for identical content.
+   *
+   * @param otherProperties the other properties
+   * @return true, if successful
+   */
+  public boolean hasIdenticalContent(final PacketProperties otherProperties) {
+
+    if (otherProperties != null) {
+      return this.identifier.equals(otherProperties.getPacketIdentificationProvider())
+          && this.sender.equals(otherProperties.getSender())
+          && this.recipient.equals(otherProperties.getRecipient());
     }
+    return false;
+  }
 
-    /**
-     * Checks for identical content.
-     *
-     * @param otherProperties the other properties
-     * @return true, if successful
-     */
-    public boolean hasIdenticalContent(final PacketProperties otherProperties) {
+  @Override
+  public CommunicationEndpoint getSender() {
+    return this.sender;
+  }
 
-        if (otherProperties != null) {
-            return this.identifier.equals(otherProperties.getPacketIdentificationProvider())
-                    && this.sender.equals(otherProperties.getSender())
-                    && this.recipient.equals(otherProperties.getRecipient());
-        }
-        return false;
-    }
+  @Override
+  public CommunicationEndpoint getRecipient() {
+    return this.recipient;
+  }
 
-    @Override
-    public CommunicationEndpoint getSender() {
-        return this.sender;
-    }
+  @Override
+  public ContentIdentifier getPacketIdentificationProvider() {
+    return this.identifier;
+  }
 
-    @Override
-    public CommunicationEndpoint getRecipient() {
-        return this.recipient;
-    }
-
-    @Override
-    public ContentIdentifier getPacketIdentificationProvider() {
-        return this.identifier;
-    }
-
-    @Override
-    public String toString() {
-        final var sb = new StringBuilder();
-        final var senderIdString = (this.sender != null) ? this.sender.toString() : null;
-        final var recipientIdString = (this.recipient != null) ? this.recipient.toString() : null;
-        final var identifierString = (this.identifier != null) ? this.identifier.toString() : null;
-        sb.append("{ \"senderEntity\": {").append(senderIdString).append("}, \"recipientEntity\": {")
-                .append(recipientIdString).append("}, \"PacketIdentifier\": {").append(identifierString)
-                .append("} }");
-        return sb.toString();
-    }
+  @Override
+  public String toString() {
+    final var sb = new StringBuilder();
+    final var senderIdString = (this.sender != null) ? this.sender.toString() : null;
+    final var recipientIdString = (this.recipient != null) ? this.recipient.toString() : null;
+    final var identifierString = (this.identifier != null) ? this.identifier.toString() : null;
+    sb.append("{ \"senderEntity\": {").append(senderIdString).append("}, \"recipientEntity\": {")
+        .append(recipientIdString).append("}, \"PacketIdentifier\": {").append(identifierString)
+        .append("} }");
+    return sb.toString();
+  }
 }

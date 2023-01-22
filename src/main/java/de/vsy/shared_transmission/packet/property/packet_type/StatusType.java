@@ -1,4 +1,3 @@
-
 package de.vsy.shared_transmission.packet.property.packet_type;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -9,6 +8,6 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
  */
 @JsonTypeName("statusEnum")
 public enum StatusType implements PacketType {
-    @JsonProperty("CHAT_STATUS")
-    CHAT_STATUS
+  @JsonProperty("CHAT_STATUS")
+  CHAT_STATUS
 }
